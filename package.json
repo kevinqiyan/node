@@ -5,6 +5,7 @@
     "nodemon": "^3.0.1"
   },
   "scripts": {
-    "start": "nodemon ./index.js"
+    "start": "nodemon ./index.js",
+    "mysql": "nodemon ./db/index.js"
   }
 }
