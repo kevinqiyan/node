@@ -1,19 +1,22 @@
 const mysql = require("mysql");
 const db = mysql.createConnection({
-  host: "127.0.0.1",
+  host: "localhost",
   user: "root",
   password: "123456",
-  socketPath: "/tmp/mysql.sock",
   database: "test",
 });
-db.connect();
-const sql = "SELECT * FROM kevin";
+db.connect(() => {
+  console.log('链接成功')
+});
+
+
+// const sql = "SELECT * FROM kevin";
 // 查询
 // 菜鸟文档：https://www.runoob.com/nodejs/nodejs-mysql.html
-db.query(sql, (err, result) => {
-  if (err) return console.log("err info", err);
-  console.log("result", result);
-});
+// db.query(sql, (err, result) => {
+//   if (err) return console.log("err info", err);
+//   console.log("result", result);
+// });
 
 // 新增
 // const add = "INSERT INTO kevin(id,name,url,alexa,country) VALUES(0,?,?,?,?)";
@@ -38,4 +41,4 @@ db.query(sql, (err, result) => {
 //     console.log('delete result',result)
 // })
 
-db.end();
+// db.end();

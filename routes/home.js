@@ -6,7 +6,7 @@ router.use((req,res,next) => {
     next()
 })
 
-router.get('/',(req,res) => {
+router.get('/query/user',(req,res) => {
     res.send('home page')
 })
 
